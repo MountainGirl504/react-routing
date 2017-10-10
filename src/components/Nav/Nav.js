@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom';
+
 
 import './Nav.css';
 
@@ -9,12 +11,16 @@ function Nav( { items } ) {
   return (
     <div id="Nav__container">
       <div id="Nav__linksContainer">
-        <span className="Nav__label">Store</span>
+        <Link className='navLink' to='/'>
+          <span className="Nav__label">Store</span>
+        </Link>
 
-        <div id="Nav__checkoutContainer">
-          <div id="Nav__itemsInCart"> { items } </div>
+        <Link className='navLink' to='/checkout'>
+          <div id="Nav__checkoutContainer">
+            <div id="Nav__itemsInCart"> { items } </div>
           <ShoppingCart id="Nav__shoppingCart" />
         </div>
+        </Link>
       </div>
     </div>
   )
